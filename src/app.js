@@ -1,8 +1,10 @@
 const express = require ("express");
 const bodyParser = require ("body-parser");
+const cors = require ("cors");
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 const port = 3000;
 
@@ -14,6 +16,7 @@ const usuariosModels = require ("./models/usuarios_models");
 const tarefasModels = require ("./models/tarefas_models");*/
 
 const bd = require ("./infra/bd");
+
 
 
 usuariosControllers(app,bd)
