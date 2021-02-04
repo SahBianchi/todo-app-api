@@ -2,20 +2,25 @@ const express = require ("express");
 const bodyParser = require ("body-parser");
 const cors = require ("cors");
 
+
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
 const port = 3000;
 
+//importando o Usuarios e Tarefas Controllers e Bd
 const usuariosControllers = require ("./controllers/usuarios_controllers");
 const tarefasControllers = require ("./controllers/tarefas_controllers");
+
+const bd = require ("./infra/sqlite-db");
+
 
 /* Criamos uma const com a classe de usuarios e tarefas modelo
 const usuariosModels = require ("./models/usuarios_models");
 const tarefasModels = require ("./models/tarefas_models");*/
 
-const bd = require ("./infra/bd");
+
 
 
 

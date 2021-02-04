@@ -1,10 +1,22 @@
-const { tarefas } = require("../infra/bd");
 const tarefasModels = require ("../models/tarefas_models");
+const tarefasDao = require ("../DAO/tarefas_dao");
 
-module.exports = (app, bd) => {
 
-    app.get ("/tarefas", (req, resp)=>
-        resp.send(bd.tarefas))
+module.exports = (app, bd)=> {
+
+    const daoTarefas = new tarefasDao(bd);
+
+    app.get ("/tarefas", async (req, resp)=>{
+        try{
+            const retornoListaTarefas = await daoTarefas.listaTarefas()
+            resp.send(retornoListaTarefas)
+        }
+
+        catch(erro){
+            resp.send(erro)
+        }
+    })
+        
 
     app.post ("/tarefas", (req, resp)=>{
         const novaTarefa = new tarefasModels (req.body.titulo, req.body.descricao, req.body.status, req.body.dataDeCriacao)
