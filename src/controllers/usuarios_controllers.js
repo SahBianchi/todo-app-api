@@ -15,6 +15,16 @@ module.exports = (app, bd)=> {
             resp.send(erro)
         }
     })
+
+    app.get("/usuarios/:id", async (req, resp)=>{
+        try{
+            const paramUsuario = await daoUsuarios.parametrosUsuario(req.params.id)
+            resp.send(paramUsuario)
+        }
+        catch(erro){
+            resp.send(erro)
+        }
+    })
      
     app.post("/usuarios", async (req, resp)=>{
         try{
@@ -24,9 +34,6 @@ module.exports = (app, bd)=> {
         catch(erro){
             resp.send(erro)
         }
-        // const novoUser = new usuariosModels(req.body.NOME, req.body.EMAIL, req.body.SENHA)
-        // bd.usuarios.push(novoUser) 
-        // resp.send(`usuario ${req.body.NOME} adicionado`)
     })
 
     app.put("/usuarios/:EMAIL", async (req, resp)=>{
@@ -38,15 +45,6 @@ module.exports = (app, bd)=> {
         catch(erro){
             resp.send(erro)
         }
-        
-        // for(let usuario of bd.usuarios){
-        //     if(usuario.email === req.params.email){
-        //         usuario.nome = req.body.nome
-        //         usuario.email = req.body.email
-        //         usuario.senha = req.body.senha
-        //         resp.send(`Usuario ${req.params.email} alterado`)
-        //     }
-        // resp.send(`Usuario ${req.params.email} não encontrado`)
     })
         
     
@@ -60,15 +58,6 @@ module.exports = (app, bd)=> {
         catch(erro){
             resp.send(erro)
         } 
-    
-        // for (let i = 0; i < bd.usuarios.length; i++){
-        //     if (req.params.email == bd.usuarios[i].email){
-        //         bd.usuarios.splice(i, 1)
-        //         console.log(req.params.email)
-        //         resp.send("usuario retirado")
-        //     }
-        // }
-        // resp.send("não achei")
     })
 
     

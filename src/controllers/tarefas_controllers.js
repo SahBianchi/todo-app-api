@@ -16,53 +16,48 @@ module.exports = (app, bd)=> {
             resp.send(erro)
         }
     })
-        
 
-    app.post ("/tarefas", (req, resp)=>{
-        const novaTarefa = new tarefasModels (req.body.titulo, req.body.descricao, req.body.status, req.body.dataDeCriacao)
-        bd.tarefas.push(novaTarefa)
-        resp.send(`Tarefa ${req.body.titulo} adicionada`)
-    }
-    )
-    //Criar um pote vazio, criar um for para ler cada item do bd, criar um if para diferenciar o que eu estou procurando e colocar o que for diferente dentro do pote vazio que foi criado, dizer que o bd recebe o novo pote
-
-    // app.delete("/tarefas/:titulo", (req, resp)=>{
-    //     const naoDeletar = []
-    //     for(let tarefa of bd.tarefas){
-    //         if(tarefa.titulo !== req.params.titulo){
-    //             naoDeletar.push(tarefa)
-    //             resp.send(`Tarefa ${req.params.titulo} não encontrada`)
-    //         }
-    //     }
-    //     bd.tarefas = naoDeletar
-    //     console.log(naoDeletar)
-        
-    //     resp.send(`Tarefa ${req.params.titulo} deletada`)
-    // })
-
-    app.delete("/tarefas/:titulo", (req, resp)=> {
-        for (let i = 0; i < bd.tarefas.length; i++){
-            if (req.params.titulo == bd.tarefas[i].titulo){
-                bd.tarefas.splice(i, 1)
-                console.log(req.params.titulo)
-                resp.send("tarefa retirado")
-            }
+    app.get ("/tarefas/:id", async (req, resp)=>{
+        try{
+            const parametroTarefas = await daoTarefas.parametroTarefas(req.params.id)
+            resp.send(parametroTarefas)
         }
-        resp.send("não achei")
+
+        catch(erro){
+            resp.send(erro)
+        }
+    })
+        
+    app.post("/tarefas", async (req, resp)=>{
+        try{
+            const insereTarefas = await daoTarefas.insereTarefa([req.body.titulo, req.body.descricao, req.body.status, req.body.datacriacao, req.body.id_usuario])
+            resp.send(insereTarefas) 
+        }
+        catch(erro){
+            resp.send(erro)
+        }
+    })
+    
+    app.delete("/tarefas/:ID", async (req, resp)=>{
+        let parametroDel = [req.params.ID]
+        try{
+            const excluiTarefa = await daoTarefas.deletaTarefa(parametroDel)
+            resp.send(excluiTarefa)
+        }
+        catch(erro){
+            resp.send(erro)
+        } 
     })
 
-    
-    app.put("/tarefas/:titulo", (req, resp)=>{
-        for(let tarefa of bd.tarefas){
-            if(tarefa.titulo === req.params.titulo){
-                tarefa.titulo = req.body.titulo
-                tarefa.descricao = req.body.descricao
-                tarefa.status = req.body.status
-                tarefa.dataDeCriacao = req.body.dataDeCriacao
-                resp.send(`Tarefa ${req.params.titulo} alterada`)
-            }
+    app.put("/tarefas/:id", async (req, resp)=>{
+        let parametro = [req.body.titulo, req.body.descricao, req.body.status, req.body.datacriacao, req.body.id_usuario, req.params.id]
+        try{
+            const alteraTarefa = await daoTarefas.atualizaTarefa(parametro)
+            resp.send(alteraTarefa)
         }
-        resp.send(`Tarefa ${req.params.titulo} não encontrada`)
+        catch(erro){
+            resp.send(erro)
+        }
     })
 
 }

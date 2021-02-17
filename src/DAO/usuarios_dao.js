@@ -17,9 +17,22 @@ module.exports = class UsuariosDao{
         
     }
 
+    parametrosUsuario(usuariosParametros){
+            return new Promise((resolve, reject)=>{
+                this.bd.all("SELECT * FROM USUARIOS WHERE ID=?", usuariosParametros, (erro, linhas)=>{
+                    if(erro){
+                        reject(`Erro ao rodar a consulta ${erro}`)
+                    }else{
+                        resolve(linhas)
+                    }
+    
+                })
+            })
+    }
+
     insereUsuario(usuario){
         return new Promise((resolve, reject)=>{
-            this.bd.all("INSERT INTO USUARIOS (NOME, EMAIL, SENHA) VALUES (?, ?, ?)", usuario, (erro, linhas)=>{
+            this.bd.run("INSERT INTO USUARIOS (NOME, EMAIL, SENHA) VALUES (?, ?, ?)", usuario, (erro, linhas)=>{
                 if(erro){
                     reject(`Erro ao inserir o usuário ${erro}`)
                 }else{
