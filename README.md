@@ -5,12 +5,13 @@ A TODO-APP-API é um projeto que foi desenvolvido durante o modulo 3 do bootcamp
 Nesse projeto foi utilizado:
     - JavaScript
     - NodeJS
-	- Express
-	- Sqlite 3
-	- CORS
-	- Body – Parser
-	- Nodemon
-	- Insominia
+    - Express
+    - Sqlite 3
+    - CORS
+    - Body 
+    – Parser
+    - Nodemon
+    - Insominia
 
 O Github foi utilizado para o controle das versões e você pode acompanhar tudo em Todo-app-api.
 
