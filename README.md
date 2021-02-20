@@ -70,8 +70,8 @@ http://localhost:3000/tarefas/id
 
 ## Deploy
 Você pode acessar as rotas diretamente nos links: 
-https://lit-beach-95763.herokuapp.com/usuarios
-https://lit-beach-95763.herokuapp.com/tarefas
+* https://lit-beach-95763.herokuapp.com/usuarios
+* https://lit-beach-95763.herokuapp.com/tarefas
 
 
 ## Autora
