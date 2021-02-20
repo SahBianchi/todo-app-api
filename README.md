@@ -29,8 +29,8 @@ Caso você queira rodar esse projeto na sua máquina basta seguir essas instruç
 Esse projeto é uma API REST, sendo assim foi utilizado os verbos HTTP GET, POST, DELETE e PUT.
 
 ➡ **Usuários** 
-* **GET** - Para ver todos os usuários que estão no bando de dados: http://localhost:3000/usuarios 
-* **GET** - Para ver apenas um usuário do bando de dados, utilize o seu id: http://localhost:3000/usuarios/id
+* **GET** - Para ver todos os usuários que estão no banco de dados: http://localhost:3000/usuarios 
+* **GET** - Para ver apenas um usuário do banco de dados, utilize o seu id: http://localhost:3000/usuarios/id
 * **POST** - Para inserir usuários no banco de dados: http://localhost:3000/usuarios
 
 Para adicionar um usuário na rota, digite no corpo as informações seguindo o exemplo abaixo:
@@ -43,12 +43,12 @@ Para adicionar um usuário na rota, digite no corpo as informações seguindo o 
 
 
 * **PUT** – Para alterar os dados na tabela “usuarios” do banco de dados: http://localhost:3000/usuarios/id
-* **DELETE** – Para apagar um registro na tabela de “usarios” no bando de dados: 
+* **DELETE** – Para apagar um registro na tabela de “usarios” no banco de dados: 
 http://localhost:3000/usuarios/id
 
 ➡ **Tarefas** 
-* **GET** - Para ver todas as tarefas que estão no bando de dados: http://localhost:3000/tarefas 
-* **GET** - Para ver apenas uma tarefa do bando de dados, utilize o seu id: http://localhost:3000/tarefas/id
+* **GET** - Para ver todas as tarefas que estão no banco de dados: http://localhost:3000/tarefas 
+* **GET** - Para ver apenas uma tarefa do banco de dados, utilize o seu id: http://localhost:3000/tarefas/id
 * **POST** - Para inserir uma tarefa no banco de dados: http://localhost:3000/tarefas
 
 Para adicionar uma tarefa na rota, digite no corpo as informações seguindo o exemplo abaixo:
@@ -63,6 +63,6 @@ Para adicionar uma tarefa na rota, digite no corpo as informações seguindo o e
 
 
 * **PUT** – Para alterar os dados na tabela “tarefas” do banco de dados: http://localhost:3000/tarefas/id
-* **DELETE** – Para apagar um registro na tabela de “tarefas” no bando de dados: 
+* **DELETE** – Para apagar um registro na tabela de “tarefas” no banco de dados: 
 http://localhost:3000/tarefas/id
 
