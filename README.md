@@ -66,3 +66,8 @@ Para adicionar uma tarefa na rota, digite no corpo as informações seguindo o e
 * **DELETE** – Para apagar um registro na tabela de “tarefas” no banco de dados: 
 http://localhost:3000/tarefas/id
 
+
+
+## Autora
+* Samantha Bianchi
+Conheça meus outros projetos - [SahBianchi](https://github.com/SahBianchi)
