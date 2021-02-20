@@ -36,7 +36,7 @@ module.exports = class UsuariosDao{
                 if(erro){
                     reject(`Erro ao inserir o usuário ${erro}`)
                 }else{
-                    resolve(linhas)
+                    resolve(`Usuário inserido`)
                 }
             })
         })
@@ -44,8 +44,8 @@ module.exports = class UsuariosDao{
 
     atualizaUsuario(parametro){
         return new Promise((resolve, reject)=>{
-            let query = "UPDATE USUARIOS SET NOME=COALESCE(?,NOME), EMAIL=COALESCE(?,EMAIL), SENHA=COALESCE(?,SENHA) WHERE EMAIL=?"
-            this.bd.run(query, parametro, (erro, linhas)=>{
+            let query = "UPDATE USUARIOS SET NOME=COALESCE(?,NOME), EMAIL=COALESCE(?,EMAIL), SENHA=COALESCE(?,SENHA) WHERE ID=?"
+            this.bd.run(query, parametro, (erro)=>{
                 if(erro){
                     reject(`Erro ao atualizar o usuário ${erro}`)
                 }else{
