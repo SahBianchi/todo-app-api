@@ -8,8 +8,7 @@ Nesse projeto foi utilizado:
 * Express
 * Sqlite 3
 * CORS
-* Body 
-* Parser
+* Body Parser
 * Nodemon
 * Insominia
 
