@@ -13,7 +13,7 @@ Nesse projeto foi utilizado:
 * Insominia
 
 
-O Github foi utilizado para o controle das versões e você pode acompanhar tudo em Todo-app-api.
+O Github foi utilizado para o controle das versões e você pode acompanhar tudo em https://github.com/SahBianchi/todo-app-api.
 
 
 ## Instruções
