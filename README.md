@@ -10,7 +10,7 @@ Nesse projeto foi utilizado:
 * CORS
 * Body Parser
 * Nodemon
-* Insominia
+* Insomnia
 
 
 O Github foi utilizado para o controle das versões e você pode acompanhar tudo em https://github.com/SahBianchi/todo-app-api.
@@ -66,6 +66,12 @@ Para adicionar uma tarefa na rota, digite no corpo as informações seguindo o e
 * **DELETE** – Para apagar um registro na tabela de “tarefas” no banco de dados: 
 http://localhost:3000/tarefas/id
 
+
+
+## Deploy
+Você pode acessar as rotas diretamente nos links: 
+https://lit-beach-95763.herokuapp.com/usuarios
+https://lit-beach-95763.herokuapp.com/tarefas
 
 
 ## Autora
